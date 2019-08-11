@@ -5,9 +5,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.event.app.domain.Company;
+import com.event.app.domain.DemoIn;
 import com.event.app.repository.CompanyTableDao;
 import com.event.app.service.CompanyTableService;
 
@@ -47,6 +47,17 @@ public class CompanyTableServiceImpl implements CompanyTableService {
 	public Optional<Company> getByCompanyId(Long id) {
 		// TODO Auto-generated method stub
 		return companydao.findById(id);
+	}
+
+	@Override
+	public List<Company> lastrows(Company c) {
+		// TODO Auto-generated method stub
+		return companydao.lastrows(c);
+	}
+
+	@Override
+	public  List<DemoIn> cost(){
+	return companydao.cost();
 	}
 
 	
